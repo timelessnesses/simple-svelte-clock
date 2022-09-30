@@ -6,6 +6,7 @@
         h = new Date()
         now = stuffs.default.date_to_string(h)
     }, 100)
+    export const prerender = true
 </script>
 
 <body>
