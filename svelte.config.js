@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-static';
-import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,7 +6,12 @@ const config = {
 	// for more information about preprocessors
 
 	kit: {
-		adapter: adapter({ out: 'publish' })
+		adapter: adapter({
+			pages: 'publish',
+			assets: 'publish',
+			fallback: null,
+			precompress: true
+		})
 	}
 };
 
